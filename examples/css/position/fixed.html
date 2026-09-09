@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Fixed Position</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <style>
+      body {
+        background-color: lightgray;
+      }
+
+      div.box {
+        width: 100px;
+        height: 100px;
+        background-color:lightsteelblue;
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 10px;
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        position: fixed;
+      }
+
+      #fixed-example {
+        border: 1px solid black;
+        background-color: white;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        height: 2000px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="fixed-example">
+      <h3>This page uses fixed position</h3>
+      <div class="box">Content</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stop Propagation</title>
+
+    <style>
+      button {
+        margin: 0.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="with-propagation-div">
+      <button id="with-propagation-btn">With propagation</button>
+    </div>
+
+    <div id="without-propagation-div">
+      <button id="without-propagation-btn">Without propagation</button>
+    </div>
+
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function() {
+        const withPropagationDiv = document.getElementById("with-propagation-div");
+        withPropagationDiv.addEventListener("click", function () {
+          alert("Div clicked with propagation!");
+        });
+
+        const withPropagationBtn = document.getElementById("with-propagation-btn");
+        withPropagationBtn.addEventListener("click", function () {
+          alert("Button clicked with propagation!");
+        });
+
+        const withoutPropagationDiv = document.getElementById("without-propagation-div");
+        withoutPropagationDiv.addEventListener("click", function () {
+          alert("Div clicked without propagation!");
+        });
+
+        const withoutPropagationBtn = document.getElementById("without-propagation-btn");
+        withoutPropagationBtn.addEventListener("click", function (event) {
+          event.stopPropagation();
+          alert("Button clicked without propagation!");
+        });
+      });
+    </script>
+  </body>
+</html>

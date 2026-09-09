@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Transitions</title>
+
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+        background-color: black;
+      }
+
+      div.container {
+        background-color: white;
+        margin-left: 10%;
+        margin-right: 10%;
+        height: 100vh;
+      }
+
+      h1 {
+        margin: 0px;
+        padding: 20px;
+      }
+
+      div.box {
+        background-color: lightgray;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        border-radius: 10px;
+        padding: 10px;
+        transition-property: width, height, background-color;
+        transition-duration: 1s;
+      }
+
+      div.box:hover {
+        background-color: blue;
+        width: 200px;
+        height: 200px;        
+        transition-property: width, height, background-color;
+        transition-duration: 1s;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Transitions</h1>
+      <div class="box">Stuff</div>
+    </div>
+  </body>
+</html>

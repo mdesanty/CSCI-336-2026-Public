@@ -1,0 +1,16 @@
+body {
+  background-color: #254661;
+  margin: 0px;
+}
+
+div.container {
+  background-color: white;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 100vh;
+  padding: 20px;
+}
+
+div.container h1 {
+  margin: 0px;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Constraint API Validation</title>
+
+  <style>
+    div.container {
+      padding: 1rem 2rem;
+    }
+
+    div.form-control {
+      margin-bottom: 1rem;
+    }
+
+    #my-form label {
+      display: block;
+    }
+
+    #my-form input {
+      display: block;
+    }
+
+    .input-error-message {
+      color: red;
+      font-size: 0.8rem;
+      margin-top: 0.2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form id="my-form" novalidate>
+      <h2>Custom Validation Styling Form</h2>
+
+      <div class="form-control">
+        <label>
+          Email
+          <input id="email" type="email" required />
+        </label>
+        <span id="email-error" class="input-error-message"></span>
+      </div>
+
+      <div class="form-control">
+        <label>
+          Password
+          <input id="password" type="password" required minlength="8" pattern="(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+" />
+        </label>
+        <span id="password-error" class="input-error-message"></span>
+      </div>
+
+      <button>Submit</button>
+    </form>
+  </div>
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+      const myForm = document.getElementById("my-form");
+
+      const emailInput = document.getElementById("email");
+      const emailErrorInput = document.getElementById("email-error");
+
+      const passwordInput = document.getElementById("password");
+      const passwordErrorInput = document.getElementById("password-error");
+
+      emailInput.addEventListener("input", function () {
+        if (emailInput.validity.valueMissing) {
+          emailErrorInput.textContent = "Email is required.";
+        }
+        else if (emailInput.validity.typeMismatch) {
+          emailErrorInput.textContent = "Please enter a valid email address.";
+        }
+        else if (emailInput.validity.valid) {
+          emailErrorInput.textContent = ""; // Clear any previous custom message
+        }
+      });
+
+      passwordInput.addEventListener("input", function () {
+        if (passwordInput.validity.valueMissing) {
+          passwordErrorInput.textContent = "Password is required.";
+        }
+        else if (passwordInput.validity.tooShort) {
+          passwordErrorInput.textContent = `Password must be at least ${passwordInput.minLength} characters long.`;
+        }
+        else if (passwordInput.validity.patternMismatch) {
+          passwordErrorInput.textContent = "Password must contain at least one uppercase letter, one number, and one special character.";
+        }
+        else if (passwordInput.validity.valid) {
+          passwordErrorInput.textContent = "";
+        }
+      });
+
+      myForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (myForm.checkValidity()) {
+          alert("Success");
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

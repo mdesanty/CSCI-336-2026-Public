@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS Form Processing</title>
+  </head>
+
+  <body>
+    <form id="my-form">
+      <label>
+        Name
+        <input id="name" type="text" />
+      </label>
+
+      <button>Submit</button>
+    </form>
+
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const myForm = document.getElementById("my-form");
+
+        myForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const name = document.getElementById("name").value;
+          console.log("Form submitted! Name: " + name);
+        });
+      });
+    </script>
+  </body>
+</html>

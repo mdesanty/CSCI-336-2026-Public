@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+
+    <style>
+      #colorful-text {
+        color: orange;
+      }
+
+      @media (min-width: 600px) {
+        #colorful-text {
+          color: green;
+        }
+      }
+
+      @media (min-width: 900px) {
+        #colorful-text {
+          color: blue;
+        }
+      }
+
+      @media (min-width: 1300px) {
+        #colorful-text {
+          color: purple;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Media Queries</h1>
+      <h3 id="colorful-text">Resize the browser window to see the text color change.</h3>
+    </div>
+  </body>
+</html>

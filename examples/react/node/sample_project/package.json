@@ -1,0 +1,18 @@
+{
+  "name": "sample_project",
+  "version": "1.0.0",
+  "description": "A sample Node project for students to reference",
+  "keywords": [
+    "sample"
+  ],
+  "license": "ISC",
+  "author": "Michael DeSanty",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cowsay": "^1.6.0"
+  }
+}

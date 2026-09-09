@@ -19,7 +19,6 @@ const getCatFacts = () => {
         factElement.textContent = fact;
         factListElement.appendChild(factElement);
       });
-
     })
     .catch(function(error) {
       alert(error);

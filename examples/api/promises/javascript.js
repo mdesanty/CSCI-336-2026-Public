@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log(error.message);
     });
 
-    console.log('All done!')
+    console.log('All done!');
   }
 });
 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Client-Side Validation</title>
+
+    <style>
+      div.container {
+        padding: 1rem 2rem;
+      }
+
+      #my-form label {
+        display: block;
+      }
+
+      #my-form input {
+        display: block;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <form id="my-form">
+        <h2>Client-Side Validation Form</h2>
+
+        <label>
+          Email 
+          <input id="email" type="email" required />
+        </label>
+
+        <label>
+          Password
+          <input id="password" type="password" required minlength="8" pattern="(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+" />
+        </label>
+
+        <button>Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

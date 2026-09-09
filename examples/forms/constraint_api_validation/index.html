@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Constraint API Validation</title>
+
+  <style>
+    div.container {
+      padding: 1rem 2rem;
+    }
+
+    #my-form label {
+      display: block;
+    }
+
+    #my-form input {
+      display: block;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form id="my-form" novalidate>
+      <h2>Constraint API Validation Form</h2>
+
+      <label>
+        Email
+        <input id="email" type="email" required />
+      </label>
+
+      <label>
+        Password
+        <input id="password" type="password" required minlength="8" pattern="(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+" />
+      </label>
+
+      <button>Submit</button>
+    </form>
+  </div>
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+      const myForm = document.getElementById("my-form");
+
+      myForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
+
+        if(emailInput.validity.valueMissing) {
+          emailInput.setCustomValidity("Email is required.");
+          emailInput.reportValidity();
+          return;
+        }
+        else if(emailInput.validity.valid) {
+          emailInput.setCustomValidity(""); // Clear any previous custom message
+        }
+
+        if(passwordInput.validity.valueMissing) {
+          passwordInput.setCustomValidity("Password is required.");
+          passwordInput.reportValidity();
+          return;
+        }
+        else if(passwordInput.validity.patternMismatch) {
+          passwordInput.setCustomValidity("Password must contain at least one uppercase letter, one number, and one special character.");
+          passwordInput.reportValidity();
+          return;
+        }
+        else if(passwordInput.validity.tooShort) {
+          passwordInput.setCustomValidity(`Password must be at least ${passwordInput.minLength} characters long.`);
+          passwordInput.reportValidity();
+        }
+        else if(passwordInput.validity.valid) {
+          passwordInput.setCustomValidity("");
+        }
+
+        if(myForm.checkValidity()) {
+          alert("Success");
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS Demo</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="my-text">
+        <p>Hello</p>
+        <p id="stupid">This p sucks</p>
+      </div>
+
+      <button onclick="alert('hello')">Alert</button>
+      <button id="alert-btn">Click me</button>
+      <button id="alert-btn-2">Click me 2</button>
+      <button id="alert-btn-3">Click me 3</button>
+      <button id="add-element-btn">Add element</button>
+      <button id="remove-sucky-btn">Remove sucky p</button>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          document.getElementById("alert-btn").onclick = function () {
+            alert("hello");
+          }
+
+          const alertButton2 = document.getElementById("alert-btn-2");
+          alertButton2.addEventListener("click", function() {
+            alert("Hello 2");
+          });
+
+          function doAlert() {
+            alert("hello 3");
+          }
+
+          const alertButton3 = document.getElementById("alert-btn-3");
+          alertButton3.addEventListener("click", doAlert);
+
+          const addElementBtn = document.getElementById("add-element-btn");
+          addElementBtn.addEventListener("click", function() {
+            const myTextDiv = document.getElementById("my-text");
+            const newElement = document.createElement("p");
+            newElement.innerHTML = "<p>Hello</p>";
+            myTextDiv.appendChilc(newElement);
+          });
+
+          const removeSuckyBtn = document.getElementById("remove-sucky-btn");
+          removeSuckyBtn.addEventListener("click", function(){
+            const myTextDiv = document.getElementById("my-text");
+            const suckyP = document.getElementById("stupid");
+            myTextDiv.removeChild(stupid);
+          });
+        });
+      </script>
+    </div>
+  </body>
+</html>

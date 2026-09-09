@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Relative Position</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <style>
+      body {
+        background-color: lightgray;
+      }
+
+      #og-position {
+        border: 1px dashed black;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        border-radius: 10px;
+      }
+
+      #relative-position {
+        width: 100px;
+        height: 100px;
+        background-color:lightsteelblue;
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 10px;
+        position: relative;
+        top: 20px;
+        left: 20px;
+      }
+
+      #relative-example {
+        border: 1px solid black;
+        background-color: white;
+        margin: 10px;
+        padding: 20px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="relative-example">
+      <h3>This page uses relative position</h3>
+      <div id="og-position">
+        <div id="relative-position">Content</div>
+      </div>
+    </div>
+  </body>
+</html>

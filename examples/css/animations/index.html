@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Animations</title>
+
+    <style>
+      div.box {
+        background-color: lightgray;
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        padding: 10px;
+
+        animation-name: boxAnimation;
+        animation-duration: 10s;
+      }
+
+      @keyframes boxAnimation {
+        from {
+          background-color: lightgray;
+        }
+
+        to {
+          background-color: blue;
+          color: white;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Animations</h1>
+      <p>CSS animations make it possible to animate transitions from one CSS style configuration to another.</p>
+      <div class="box">Stuff</div>
+    </div>
+  </body>
+</html>
