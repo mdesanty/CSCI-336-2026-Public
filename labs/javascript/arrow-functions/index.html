@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions Lab</title>
+  </head>
+
+  <body>
+    <h1>Arrow Functions Lab</h1>
+
+    <!-- Part 2: render your formatted prices as list items inside here -->
+    <h2>Prices</h2>
+    <ul id="prices"></ul>
+
+    <!-- Part 3: wire up this button -->
+    <button id="go">Go</button>
+
+    <script>
+      // ===== Part 1: rewrite these as arrow functions =====
+      // At least one of them must use the short, implicit-return form.
+
+      function square(n) {
+        return n * n;
+      }
+
+      function isEven(n) {
+        return n % 2 === 0;
+      }
+
+      function fullName(first, last) {
+        return first + " " + last;
+      }
+
+      // ===== Part 2: map + render =====
+      // Using .map() with an arrow function, turn this array into
+      // ["$10", "$25", "$40"], then add each value as an <li> inside #prices.
+      const prices = [10, 25, 40];
+
+      // your code here
+
+
+      // ===== Part 3: event handler =====
+      // Add a click listener to the #go button whose handler is an
+      // arrow function that logs "Going!" to the console.
+
+      // your code here
+
+    </script>
+  </body>
+</html>
