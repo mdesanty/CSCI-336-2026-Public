@@ -3,49 +3,80 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arrow Functions Lab</title>
+    <title>Arrow Functions Lab - Calculator</title>
   </head>
 
   <body>
     <h1>Arrow Functions Lab</h1>
 
-    <!-- Part 2: render your formatted prices as list items inside here -->
-    <h2>Prices</h2>
-    <ul id="prices"></ul>
+    <p>
+      This little calculator already works. Every function in the script below
+      is written the old way, as a function declaration or an anonymous
+      <code>function () { ... }</code>. Your job is to rewrite all of them as
+      arrow functions without changing how the calculator behaves.
+    </p>
 
-    <!-- Part 3: wire up this button -->
-    <button id="go">Go</button>
+    <form id="calculator">
+      <input id="a" type="number" value="0">
+      <input id="b" type="number" value="0">
+
+      <div>
+        <button id="add" type="button">Add</button>
+        <button id="subtract" type="button">Subtract</button>
+        <button id="clear" type="button">Clear</button>
+      </div>
+
+      <p>Result: <span id="result">0</span></p>
+    </form>
 
     <script>
-      // ===== Part 1: rewrite these as arrow functions =====
-      // At least one of them must use the short, implicit-return form.
+      // These grab the elements we need. Leave them alone - they are not functions.
+      const inputA = document.getElementById("a");
+      const inputB = document.getElementById("b");
+      const result = document.getElementById("result");
 
-      function square(n) {
-        return n * n;
+      // ===== Math functions =====
+      // Both of these are a single expression. Perfect for the short,
+      // implicit-return arrow form.
+      function add(x, y) {
+        return x + y;
       }
 
-      function isEven(n) {
-        return n % 2 === 0;
+      function subtract(x, y) {
+        return x - y;
       }
 
-      function fullName(first, last) {
-        return first + " " + last;
+      // ===== Helpers =====
+      // Read both inputs as numbers.
+      function readValues() {
+        return {
+          a: Number(inputA.value),
+          b: Number(inputB.value)
+        };
       }
 
-      // ===== Part 2: map + render =====
-      // Using .map() with an arrow function, turn this array into
-      // ["$10", "$25", "$40"], then add each value as an <li> inside #prices.
-      const prices = [10, 25, 40];
+      // Show a value in the result span.
+      function showResult(value) {
+        result.textContent = value;
+      }
 
-      // your code here
+      // ===== Event listeners =====
+      // These three callbacks are anonymous functions. Rewrite them as arrows too.
+      document.getElementById("add").addEventListener("click", function () {
+        const values = readValues();
+        showResult(add(values.a, values.b));
+      });
 
+      document.getElementById("subtract").addEventListener("click", function () {
+        const values = readValues();
+        showResult(subtract(values.a, values.b));
+      });
 
-      // ===== Part 3: event handler =====
-      // Add a click listener to the #go button whose handler is an
-      // arrow function that logs "Going!" to the console.
-
-      // your code here
-
+      document.getElementById("clear").addEventListener("click", function () {
+        inputA.value = 0;
+        inputB.value = 0;
+        showResult(0);
+      });
     </script>
   </body>
 </html>
