@@ -1,0 +1,76 @@
+.app {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.app h1 {
+  margin-bottom: 20px;
+}
+
+.person-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.card {
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.card-header h2 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.role {
+  margin: 4px 0 12px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.online {
+  background: #2da44e;
+}
+
+.dot.offline {
+  background: #afb8c1;
+}
+
+.bio {
+  margin: 8px 0 0;
+}
+
+.badge {
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
