@@ -1,0 +1,87 @@
+#functional-updates {
+  max-width: 760px;
+  margin: 30px auto;
+  padding: 0 16px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+#functional-updates .intro {
+  color: #424a53;
+}
+
+#functional-updates .panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+#functional-updates .panel {
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fff;
+}
+
+#functional-updates h2.bad {
+  color: #b42318;
+  margin-top: 0;
+}
+
+#functional-updates h2.good {
+  color: #1d7a4a;
+  margin-top: 0;
+}
+
+#functional-updates .code {
+  font-family: Consolas, "SFMono-Regular", Menlo, monospace;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 0.9rem;
+}
+
+#functional-updates .stat {
+  margin: 6px 0;
+}
+
+#functional-updates .behind {
+  color: #b42318;
+  font-weight: 600;
+}
+
+#functional-updates .catching {
+  color: #9a6700;
+}
+
+#functional-updates .synced {
+  color: #1d7a4a;
+  font-weight: 600;
+}
+
+#functional-updates button {
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 8px 12px;
+  background: #f6f8fa;
+  cursor: pointer;
+}
+
+#functional-updates button:hover {
+  background: #eaeef2;
+}
+
+#functional-updates button.reset {
+  margin-top: 16px;
+}
+
+#functional-updates button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media (max-width: 640px) {
+  #functional-updates .panels {
+    grid-template-columns: 1fr;
+  }
+}
