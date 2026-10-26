@@ -34,10 +34,15 @@
   font: inherit;
 }
 
-#movie-form .error {
-  color: #b42318;
-  font-weight: 600;
-  margin: 8px 0;
+#movie-form input.is-invalid,
+#movie-form select.is-invalid {
+  border-color: #dc3545;
+}
+
+#movie-form .invalid-feedback {
+  color: #dc3545;
+  font-size: 0.875em;
+  margin: 4px 0 0;
 }
 
 #movie-form button {
