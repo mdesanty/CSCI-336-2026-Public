@@ -1,8 +1,57 @@
-#movies table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
+#movie-form {
+  max-width: 480px;
+  margin: 30px auto;
+  padding: 0 16px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
-#movies th, td {
-  padding: 10px;
+#movie-form .movies {
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+#movie-form .genre {
+  color: #57606a;
+  font-size: 0.9rem;
+}
+
+#movie-form .field {
+  margin-bottom: 12px;
+}
+
+#movie-form label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+#movie-form input,
+#movie-form select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  font: inherit;
+}
+
+#movie-form .error {
+  color: #b42318;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+#movie-form button {
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 8px 14px;
+  background: #f6f8fa;
+  cursor: pointer;
+}
+
+#movie-form button:hover {
+  background: #eaeef2;
+}
+
+#movie-form button:focus:not(:focus-visible) {
+  outline: none;
 }

@@ -1,57 +1,55 @@
-import { useState } from 'react';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
+// A small controlled form: text input + select, a submit handler that calls
+// preventDefault and validates, then adds the movie to a list in state.
 function App() {
   const [movies, setMovies] = useState([
-    { title: 'The Shawshank Redemption', genre: 'Drama' },
-    { title: 'The Godfather', genre: 'Drama' },
-    { title: 'The Dark Knight', genre: 'Action' },
-    { title: 'Pulp Fiction', genre: 'Drama' },
-    { title: 'Super Troopers', genre: 'Comedy' },
-    { title: 'The Exorcist', genre: 'Horror' },
-    { title: 'The Terminator', genre: 'Action' },
-    { title: 'Die Hard', genre: 'Action' }
+    { title: "The Matrix", genre: "Action" },
+    { title: "Groundhog Day", genre: "Comedy" }
   ]);
-  const [formData, setFormData] = useState({ title: '', genre: 'Action' });
+  const [formData, setFormData] = useState({ title: "", genre: "Action" });
+  const [error, setError] = useState("");
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setMovies([...movies, { title: formData.title, genre: formData.genre }]);
-    setFormData({ title: '', genre: 'action' });
-  }
+
+    if (formData.title.trim() === "") {
+      setError("Please enter a title.");
+      return;
+    }
+
+    setError("");
+    setMovies((prev) => [...prev, { title: formData.title, genre: formData.genre }]);
+    setFormData({ title: "", genre: "Action" });
+  };
 
   return (
-    <div id="movies" style={{paddingLeft: '20px'}}>
+    <div id="movie-form">
       <h1>Movies</h1>
-      <div>
-        <table style={{width: '80%', border: '1px solid black'}}>
-          <thead style={{ border: '1px solid black' }}>
-            <tr>
-              <th>Title</th>
-              <th>Genre</th>
-            </tr>
-          </thead>
-          <tbody style={{ border: '1px solid black' }}>
-            {movies.map((movie, index) => (
-              <tr key={index}>
-                <td>{movie.title}</td>
-                <td>{movie.genre}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <ul className="movies">
+        {movies.map((movie, index) => (
+          <li key={index}>
+            {movie.title} <span className="genre">({movie.genre})</span>
+          </li>
+        ))}
+      </ul>
 
-      <h2>Add Movie</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="title" style={{paddingRight: '5px'}}>Title:</label>
-          <input type="text" id="title" name="title" value={formData.title} onChange={(e) => setFormData({...formData, title: e.target.value})} />
+      <h2>Add a movie</h2>
+      <form onSubmit={handleSubmit} noValidate>
+        <div className="field">
+          <label htmlFor="title">Title</label>
+          <input id="title" name="title" value={formData.title} onChange={handleChange} />
         </div>
 
-        <div style={{paddingTop: '10px'}}>
-          <label htmlFor="genre" style={{paddingRight: '5px'}}>Genre:</label>
-          <select id="genre" name="genre" value={formData.genre} onChange={(e) => setFormData({...formData, genre: e.target.value})}>
+        <div className="field">
+          <label htmlFor="genre">Genre</label>
+          <select id="genre" name="genre" value={formData.genre} onChange={handleChange}>
             <option value="Action">Action</option>
             <option value="Comedy">Comedy</option>
             <option value="Drama">Drama</option>
@@ -59,9 +57,9 @@ function App() {
           </select>
         </div>
 
-        <div style={{ paddingTop: '15px' }}>
-          <button type="submit">Submit</button>
-        </div>
+        {error && <p className="error">{error}</p>}
+
+        <button type="submit">Add movie</button>
       </form>
     </div>
   );
