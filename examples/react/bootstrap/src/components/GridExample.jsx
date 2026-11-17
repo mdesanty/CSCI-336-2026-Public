@@ -54,7 +54,7 @@ function GridExample() {
 
         <Col>
           <Card>
-            <Card.Img variant='top' alt='One Punch Man' src='https://static.posters.cz/image/750/plakaty/one-punch-man-destruction-i61317.jpg' />
+            <Card.Img variant='top' alt='One Punch Man' src='https://m.media-amazon.com/images/M/MV5BNzMwOGQ5MWItNzE3My00ZDYyLTk4NzAtZWIyYWI0NTZhYzY0XkEyXkFqcGc@._V1_.jpg' />
             <Card.Body>
               <Card.Title>One Punch Man</Card.Title>
               <Card.Text>
@@ -69,7 +69,7 @@ function GridExample() {
 
         <Col>
           <Card>
-            <Card.Img variant='top' alt='Death Note' src='https://m.media-amazon.com/images/M/MV5BNjRiNmNjMmMtN2U2Yi00ODgxLTk3OTMtMmI1MTI1NjYyZTEzXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg' />
+            <Card.Img variant='top' alt='Death Note' src='https://m.media-amazon.com/images/M/MV5BYTgyZDhmMTEtZDFhNi00MTc4LTg3NjUtYWJlNGE5Mzk2NzMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg' />
             <Card.Body>
               <Card.Title>Death Note</Card.Title>
               <Card.Text>
@@ -84,7 +84,7 @@ function GridExample() {
 
         <Col>
           <Card>
-            <Card.Img variant='top' alt='Hunter x Hunter' src='https://m.media-amazon.com/images/M/MV5BNGM0YTk3MWEtN2JlZC00ZmZmLWIwMDktZTMxZGE5Zjc2MGExXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg' />
+            <Card.Img variant='top' alt='Hunter x Hunter' src='https://m.media-amazon.com/images/M/MV5BYzYxOTlkYzctNGY2MC00MjNjLWIxOWMtY2QwYjcxZWIwMmEwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg' />
             <Card.Body>
               <Card.Title>Hunter x Hunter</Card.Title>
               <Card.Text>
